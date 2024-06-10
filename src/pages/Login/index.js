@@ -2,7 +2,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Col, Row, Container } from "react-bootstrap";
-import './login.css';
+
 
 
 function Login() {
@@ -16,7 +16,7 @@ function Login() {
                 Senha:
                 <input type="password" name="senha" /> <br />
                 <Col xs={6}> <Link to="/descarte">Logar</Link></Col>
-                <Col xs={6}><Link to='/cadastro'>Cadastrar</Link></Col>
+                <Col xs={6}><Link to='*'>Cadastrar</Link></Col>
                
             </Row>
         </Container>
