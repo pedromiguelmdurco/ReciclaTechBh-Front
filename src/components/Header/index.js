@@ -13,8 +13,8 @@ function Header(){
    
     useEffect(() => {
         async function loadLogins(){
-            const response = await api.get("users/login");
-            getUsers(response.data.results);
+            // const response = await api.get("users/login");
+            // getUsers(response.data.results);
         }
         loadLogins();
         
