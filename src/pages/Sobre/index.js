@@ -1,4 +1,4 @@
-
+import Texto from "./texto";
 
 
 function Sobre(){
@@ -6,10 +6,10 @@ function Sobre(){
         <div>
 
             <div className="ml-2">
-                <h1 className="text-[#5C832F] mx-2 my-2" >Quero descartar</h1>
+                <h1 className="text-[#5C832F] mx-2 my-2" >Sobre Nós</h1>
             </div>
             <div className="box-decoration-slice border-solid border-2 border-[#5C832F] mx-6">
-                <h5>xxxxxxxxxxxxxxxx</h5>
+                <Texto/>
             </div>
         </div>
     )

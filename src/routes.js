@@ -8,6 +8,7 @@ import Sobre from "./pages/Sobre";
 import Politica from "./pages/Politica";
 import Contato from "./pages/Contato";
 import Mapa from "./pages/Mapa";
+import Admin from "./pages/Adimin";
 
 
 import Header from "./components/Header";
@@ -24,6 +25,7 @@ function RoutesApp(){
                 <Route path="/contato" element={<Contato/>}/>
                 <Route path="/politica" element={<Politica/>}/>
                 <Route path="/mapa" element={<Mapa/>}/>
+                <Route path="/adimin" element={<Admin/>}/>
                 <Route path="*" element={<Erro/>}/>
             </Routes>
             <Footer/>

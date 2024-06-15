@@ -1,30 +1,47 @@
-import { Link } from "react-router-dom";
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import './header.css';
 import logo from '../../assets/logo.png'
 import { useCallback, useEffect, useState } from "react";
 import api from "../../services/api";
+
 
 function Header(){
 
     const [users, getUsers] = useState([]);
     const[login,setLogin] = useState('');
     const[senha,setSenha] = useState('');
-
-   
-    useEffect(() => {
-        async function loadLogins(){
-            // const response = await api.get("users/login");
-            // getUsers(response.data.results);
-        }
-        loadLogins();
-        
-      });
-
+    const navigate = useNavigate();
 
     
-      const handleLogin = () => {
-        
-        
+      function Entrar() {
+        async function loadLogins(){
+            try {
+                const response = await api.post("users/login", {
+                    email: login,
+                    password: senha
+                });
+                console.log(response.data);
+                api.defaults.headers.common.Authorization = `Bearer ${response.data.accessToken}`;
+                localStorage.setItem("Token", response.data.accessToken);
+                alert("Logado");
+                navigate('/adimin');
+            }
+            
+            catch(error){
+                if (error.response) {
+                    // O servidor respondeu com um status fora da faixa 2xx
+                    console.log('Erro no response:', error.response.data);
+                    alert("Usuário ou senha estão incorretos");
+                } else if (error.request) {
+                    // A requisição foi feita mas não houve resposta
+                    console.log('Erro no request:', error.request);
+                } /*else {
+                    // Alguma outra coisa aconteceu ao configurar a requisição
+                    console.log('Erro ao configurar a requisição:', error.message);
+                }*/
+            }
+        }
+        loadLogins();
     };
 
     return(
@@ -36,7 +53,7 @@ function Header(){
                     name="email" 
                     class="h-8 px-2 mr-2" 
                     placeholder="usuário"
-                    value={login}
+                   
                     onChange={(e)=> setLogin(e.target.value)}
                 />
                 <input 
@@ -44,11 +61,11 @@ function Header(){
                     name="senha" 
                     class="h-8 px-2 mr-2" 
                     placeholder="senha" 
-                    value={senha}
+                    
                     onChange={e => setSenha(e.target.value)}
                 />
-                <button
-                    onClick={handleLogin()}
+                <button type="button"
+                    onClick={Entrar}
                     class="bg-[#2c6825] text-white w-1/5 m-auto rounded-xl h-8 duration-100 hover:bg-[#398830] font-bold px-2"
                 >
                     Entrar
