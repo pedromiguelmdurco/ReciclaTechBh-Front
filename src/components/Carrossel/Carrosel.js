@@ -1,11 +1,8 @@
 import { useState } from "react";
-import img1 from "../../assets/Border-Collie-2-2392238780.jpg";
-import img3 from "../../assets/images.jpeg";
-import img2 from "../../assets/salsicha.jpg";
 
 
 export default function Carrosel() {
-  const images = [img1, img2, img3];
+  
   const videos = ['H39dG1d4I8o', 'MezIF9iTowM', 'H39dG1d4I8o'];
 
   const [currentIndex, setCurrentIndex] = useState(0);
