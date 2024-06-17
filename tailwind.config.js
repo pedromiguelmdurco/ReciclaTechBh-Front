@@ -5,6 +5,10 @@ module.exports = {
     extend: {
       height : {
         '55screen': '55vh',
+      },
+      width:{
+        '99.2screen': '99.2vw',
+        '56screen': '56vw'
       }
     },
   },

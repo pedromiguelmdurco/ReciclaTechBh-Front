@@ -48,7 +48,7 @@ function DeleteEmpresa(){
           onClick={Deletar}
           class="bg-[#2c6825] text-white w-1/5 m-auto rounded-xl h-8 duration-100 hover:bg-[#398830] font-bold px-2"
         >
-          Adicionar
+          Deletar
         </button>
       </div>
 

@@ -80,9 +80,9 @@ function AddEmpresa() {
       <div className="my-3">
         <h3>CEP da empresa</h3>
         <InputMask
-          mask="99-999999"
+          mask="99999-999"
           className="h-8 px-2 mr-2 bg-[#e7e7e7]"
-          placeholder="99-999999"
+          placeholder="99999-999"
           onChange={(e) => setEmpresa({ ...empresa, cep: e.target.value })}
         />
       </div>
@@ -126,18 +126,18 @@ function AddEmpresa() {
       <div className="my-3">
         <h3>CEP do alcance Inicial</h3>
         <InputMask
-          mask="99-999999"
+          mask="99999-999"
           className="h-8 px-2 mr-2 bg-[#e7e7e7]"
-          placeholder="99-999999"
+          placeholder="99999-999"
           onChange={(e) => setEmpresa({ ...empresa, cep1: e.target.value })}
         />
       </div>
       <div className="my-3">
         <h3>CEP do alcance maximo</h3>
         <InputMask
-          mask="99-999999"
+          mask="99999-999"
           className="h-8 px-2 mr-2 bg-[#e7e7e7]"
-          placeholder="99-999999"
+          placeholder="99999-999"
           onChange={(e) => setEmpresa({ ...empresa, cep2: e.target.value })}
         />
       </div>

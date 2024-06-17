@@ -7,7 +7,6 @@ import api from "../../services/api";
 
 function Header(){
 
-    const [users, getUsers] = useState([]);
     const[login,setLogin] = useState('');
     const[senha,setSenha] = useState('');
     const navigate = useNavigate();
@@ -48,6 +47,7 @@ function Header(){
         <header className="bg-[#5C832F] py-6 px-2 flex flex-row justify-between" >
             <Link to={'/'}><img src={logo}/></Link>
              <div class="flex flex-row text-center px-4 justify-around items-center">
+                <h5 className="text-white">Acesso Restrito:</h5>
                 <input 
                     type="email" 
                     name="email" 
@@ -57,7 +57,7 @@ function Header(){
                     onChange={(e)=> setLogin(e.target.value)}
                 />
                 <input 
-                    type="senha" 
+                    type="password" 
                     name="senha" 
                     class="h-8 px-2 mr-2" 
                     placeholder="senha" 

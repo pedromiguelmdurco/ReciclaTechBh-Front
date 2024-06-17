@@ -36,8 +36,8 @@ function GetEmpresa() {
 
 
     function zap(){
-        if (empresas.length > 2) {
-            const empresa = empresas[2];
+        if (empresas.length >= 0) {
+            const empresa = empresas[0];
             const phoneNumber = empresa.phoneNumber.replace(/\D/g, ''); // Remove caracteres não numéricos
             window.open(`https://wa.me/${phoneNumber}`, '_blank');
         } else {

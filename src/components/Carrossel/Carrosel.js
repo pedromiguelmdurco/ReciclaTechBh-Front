@@ -46,7 +46,7 @@ export default function Carrosel() {
         className="w-72 h-72"
         alt="Imagem carrosel"*/}
 
-      <iframe className="w-screen , h-55screen"
+      <iframe className="w-99.2screen , h-55screen"
        src={`https://www.youtube.com/embed/${videos[currentIndex]}`}
        title="sou a ultima pessoa do planeta terra musica @pedromirfilho" 
        frameborder="0" 
