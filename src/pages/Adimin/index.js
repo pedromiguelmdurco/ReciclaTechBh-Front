@@ -5,7 +5,7 @@ import AddEmpresa from "../../components/AddEmpresa";
 import DeleteEmpresa from "../../components/DeleteEmpresa";
 import GetEmpresa from "../../components/GetEmpresas";
 import AddPonto from "../../components/AddPonto";
-
+import Mensagem from "../../components/Mensagens";
 
 
 function Adimin() {
@@ -15,13 +15,15 @@ function Adimin() {
     const renderComponent = () => {
         switch (componente) {
             case 'A':
-                return<AddEmpresa/>;
+                return <AddEmpresa />;
             case 'B':
-                return<DeleteEmpresa/>;
+                return <DeleteEmpresa />;
             case 'C':
-                return<AddPonto/>;
+                return <AddPonto />;
             case 'D':
-                return<GetEmpresa/>;
+                return <GetEmpresa />;
+            case 'E':
+                return <Mensagem />;
         }
     }
 
@@ -34,6 +36,7 @@ function Adimin() {
                     <li onClick={() => setComponent('B')} className="h-10 my-5 rounded-xl hover:bg-[#2E3192] duration-700 cursor-pointer"><h3>Apagar empresa</h3></li>
                     <li onClick={() => setComponent('C')} className="h-10 my-5 rounded-xl hover:bg-[#2E3192] duration-700 cursor-pointer"><h3>Adicionar Ponto</h3></li>
                     <li onClick={() => setComponent('D')} className="h-10 my-5 rounded-xl hover:bg-[#2E3192] duration-700 cursor-pointer"><h3>Empresas</h3></li>
+                    <li onClick={() => setComponent('E')} className="h-10 my-5 rounded-xl hover:bg-[#2E3192] duration-700 cursor-pointer"><h3>Mensagens</h3></li>
                 </ul>
             </div>
             <div className="col-start-3 col-end-9 float-left">

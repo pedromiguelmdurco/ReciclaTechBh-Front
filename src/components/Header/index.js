@@ -22,8 +22,10 @@ function Header(){
                 console.log(response.data);
                 api.defaults.headers.common.Authorization = `Bearer ${response.data.accessToken}`;
                 localStorage.setItem("Token", response.data.accessToken);
-                alert("Logado");
                 navigate('/adimin');
+
+                setLogin('');
+                setSenha('');
             }
             
             catch(error){
@@ -44,29 +46,29 @@ function Header(){
     };
 
     return(
-        <header className="bg-[#5C832F] py-6 px-2 flex flex-row justify-between" >
-            <Link to={'/'}><img src={logo}/></Link>
-             <div class="flex flex-row text-center px-4 justify-around items-center">
-                <h5 className="text-white">Acesso Restrito:</h5>
+        <header className="bg-[#5C832F] py-4 px-2 flex flex-col md:flex-row justify-between items-center" >
+            <Link to={'/'} className="mb-4 md:mb-0"><img src={logo}/></Link>
+             <div class="flex flex-col md:flex-row text-center md:space-x-4 items-center w-full md:w-auto">
+                <h5 className="text-white mb-2 md:mb-0">Acesso Restrito:</h5>
                 <input 
                     type="email" 
                     name="email" 
-                    class="h-8 px-2 mr-2" 
+                    class="h-8 px-2 mb-2 md:mb-0" 
                     placeholder="usuário"
-                   
+                    value={login}
                     onChange={(e)=> setLogin(e.target.value)}
                 />
                 <input 
                     type="password" 
                     name="senha" 
-                    class="h-8 px-2 mr-2" 
+                    class="h-8 px-2 mb-2 md:mb-0" 
                     placeholder="senha" 
-                    
+                    value={login}
                     onChange={e => setSenha(e.target.value)}
                 />
                 <button type="button"
                     onClick={Entrar}
-                    class="bg-[#2c6825] text-white w-1/5 m-auto rounded-xl h-8 duration-100 hover:bg-[#398830] font-bold px-2"
+                    class="bg-[#2c6825] text-white w-full md:w-auto rounded-xl h-8 duration-100 hover:bg-[#398830] font-bold px-4"
                 >
                     Entrar
                 </button>

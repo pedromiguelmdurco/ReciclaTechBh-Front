@@ -8,17 +8,16 @@ function Mapa() {
     const [cep, setCep] = useState('');
     const [empresas, setEmpresas] = useState([])
     const location = useLocation();
-    const {linha} = location.state || {};
+    const { linha } = location.state || {};
 
     function Mapa() {
         async function Filtro() {
             try {
                 const response = await api.get(`collection-spots?cep=${cep}`);
-                console.log(response.data);
-                const respostas =response.data.filter(x => x.company.collectionLine === linha);
+                
+                const respostas = response.data.filter(x => x.company.collectionLine === linha);
                 setEmpresas(respostas);
-                console.log(empresas);
-                console.log(respostas);
+                
             }
 
             catch (error) {
@@ -37,6 +36,15 @@ function Mapa() {
         }
         Filtro();
     }
+    function zap(e) {
+        if (e != null) {
+            const phoneNumber = e.replace(/\D/g, ''); // Remove caracteres não numéricos
+            window.open(`https://wa.me/${phoneNumber}`, '_blank');
+        } else {
+            alert("Não há contato.");
+        }
+
+    }
 
 
     return (
@@ -52,24 +60,24 @@ function Mapa() {
                     <div className="my-4 text-center items-center ">
                         <h3>Informe seu CEP</h3>
                         <InputMask
-                            mask="99-999999"
+                            mask="99999-999"
                             className="h-8 px-2 mr-2 bg-[#e7e7e7]"
-                            placeholder="99-999999"
+                            placeholder="99999-999"
                             onChange={(e) => setCep(e.target.value)}
                         />
                         <button onClick={Mapa} className="bg-[#5C832F] mx-2 w-24 h-9 rounded-lg">Procurar</button>
                     </div>
                 </div>
-                
+
             </div>
             <div className="col-start-5 py-4 w-56screen">
-                
-            <div className="border-solid border-[#5C832F] border-3">
+
+                <div className="border-solid border-[#5C832F] border-3">
                     <ul className="list-disc">
                         {empresas.length === 0 && <h3 className="text-center px-4 justify-around items-center my-44 mb-60">Não tem Pontos perto de você</h3>}
                         {empresas.map((item) => (
                             <li key={item.id} className="p-3 m-3 border-solid border-2 border-[#5C832F]">
-                                <span>Empresa: {item.company.name}<br /> Cep do Ponto: {item.cep}<br />
+                                <span>Empresa: {item.company.name} | Contato: <button onClick={() => zap(item.company.phoneNumber)}>{item.company.phoneNumber}</button><br /> Cep do Ponto: {item.cep}<br />
                                     Endereço: {item.address}, {item.number}<br /></span>
 
                             </li>
