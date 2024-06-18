@@ -33,7 +33,7 @@ function AddEmpresa() {
           cepDeliveryInitialRange: empresa.cep1,
           cepDeliveryEndRange: empresa.cep2
         });
-        console.log(response.data);
+        
         alert('Adicionada com sucesso.');
       }
 

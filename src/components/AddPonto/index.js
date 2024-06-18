@@ -21,7 +21,7 @@ function AddPonto() {
                     address: ponto.address,
                     number: ponto.number
                 });
-                console.log(response.data);
+               
                 alert('Ponto Adicionado com sucesso.');
             }
 

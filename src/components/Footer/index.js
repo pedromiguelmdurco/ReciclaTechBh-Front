@@ -1,6 +1,6 @@
 import { Button } from 'react-bootstrap';
-import prefeitura from '../../assets/pref.png'
-import proda from '../../assets/proda.png'
+import prefeitura from '../../assets/logoPrefeituraBranca.png'
+import proda from '../../assets/logoProdabelBRANCA.png'
 import { Link } from 'react-router-dom';
 function Footer(){
 

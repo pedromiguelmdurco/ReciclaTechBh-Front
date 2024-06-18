@@ -8,7 +8,7 @@ function DeleteEmpresa(){
     async function Delet() {
       try {
         const response = await api.delete(`companies/${id}`);
-        console.log(response.data);
+        
         alert('Deletada com sucesso.');
       }
 

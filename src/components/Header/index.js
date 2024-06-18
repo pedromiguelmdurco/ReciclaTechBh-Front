@@ -19,7 +19,7 @@ function Header(){
                     email: login,
                     password: senha
                 });
-                console.log(response.data);
+                
                 api.defaults.headers.common.Authorization = `Bearer ${response.data.accessToken}`;
                 localStorage.setItem("Token", response.data.accessToken);
                 navigate('/adimin');

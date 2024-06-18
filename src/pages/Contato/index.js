@@ -19,7 +19,7 @@ function Contato(){
               text: mensagem.text,
               
             });
-            console.log(response.data);
+            
             alert('Mensagem enviada');
 
             setMensagem({
