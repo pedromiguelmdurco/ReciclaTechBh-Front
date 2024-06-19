@@ -54,7 +54,7 @@ function Mapa() {
                     <h1 className="text-[#5C832F] my-2" >Encontre um ponto perto de você</h1>
                 </div>
                 <div className="box-decoration-slice mx-6 max-w-4xl">
-                    <h5>Clique em localização atual  e escolha uma categoria para localizar um Ponto de Coleta ou Coleta Residencial mais próximo de você.</h5>
+                    <h5>Digite seu CEP para encontrar um local mais próximo de você!</h5>
                 </div>
                 <div>
                     <div className="my-4 text-center items-center ">
@@ -77,7 +77,7 @@ function Mapa() {
                         {empresas.length === 0 && <h3 className="text-center px-4 justify-around items-center my-44 mb-60">Não tem Pontos perto de você</h3>}
                         {empresas.map((item) => (
                             <li key={item.id} className="p-3 m-3 border-solid border-2 border-[#5C832F]">
-                                <span>Empresa: {item.company.name} | Contato: <button onClick={() => zap(item.company.phoneNumber)}>{item.company.phoneNumber}</button><br /> Cep do Ponto: {item.cep}<br />
+                                <span>Empresa: {item.company.name} | Contato: <button className="text-blue-500 underline" onClick={() => zap(item.company.phoneNumber)}>{item.company.phoneNumber}</button><br /> Cep do Ponto: {item.cep}<br />
                                     Endereço: {item.address}, {item.number}<br /></span>
 
                             </li>

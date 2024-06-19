@@ -72,8 +72,10 @@ function Contato(){
                 value={mensagem.text} 
                 className="box-decoration-slice border-solid border-2 border-[#5C832F] mx-6 my-2 w-3/4 h-55screen "
                 onChange={(e)=> setMensagem({...mensagem, text: e.target.value})} /><br/>
-                <button class="bg-[#2c6825] text-white w-1/6 rounded-lg h-8 duration-100 hover:bg-[#398830] font-bold px-2 float-right mr-96"
-                onClick={Mandar}>Enviar</button>
+                <div className="flex justify-end w-full sm:w-3/4 md:w-1/2 lg:w-1/3 mx-auto">
+          <button className="bg-[#2c6825] text-white py-2 px-4 rounded hover:bg-[#398830] font-bold w-96"
+            onClick={Mandar}>Enviar</button>
+        </div>
             </div>
         </div>
     )

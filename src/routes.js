@@ -3,7 +3,6 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 
 import Descarte from "./pages/Descarte";
-import Erro from "./pages/Erro";
 import Sobre from "./pages/Sobre";
 import Politica from "./pages/Politica";
 import Contato from "./pages/Contato";
@@ -26,7 +25,7 @@ function RoutesApp(){
                 <Route path="/politica" element={<Politica/>}/>
                 <Route path="/mapa" element={<Mapa/>}/>
                 <Route path="/adimin" element={<Admin/>}/>
-                <Route path="*" element={<Erro/>}/>
+                
             </Routes>
             <Footer/>
         </BrowserRouter>
