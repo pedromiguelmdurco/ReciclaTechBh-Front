@@ -1,5 +1,11 @@
 import { Link } from "react-router-dom";
 import Carrosel from "../../components/Carrossel/Carrosel";
+import linhaVerde from "../../assets/linhaVerde_tarja.png";
+import linhaAzul from "../../assets/linhaAzul_tarja.png";
+import linhaMarrom from "../../assets/linhaMarrom_Tarja.png";
+import linhaBranca from "../../assets/linhaBranca_Tarja.png";
+import linhaReverse from "../../assets/LOGISTICAREVERSA.png";
+
 
 function Descarte() {
   return (
@@ -14,29 +20,29 @@ function Descarte() {
         </h1>
         {/* Cards */}
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          <div className="bg-slate-400 h-36 sm:h-48 md:h-56 lg:h-72 w-full flex items-center justify-center hover:opacity-80">
+          <div className="flex items-center justify-center hover:opacity-80">
             <Link to="/mapa" state={{ linha: "Verde" }} className="text-white">
-              Verde
+              <img src={linhaVerde} className="object-cover h-36 sm:h-48 md:h-56 lg:h-72 w-full"></img>
             </Link>
           </div>
-          <div className="bg-slate-400 h-36 sm:h-48 md:h-56 lg:h-72 w-full flex items-center justify-center hover:opacity-80">
+          <div className="flex items-center justify-center hover:opacity-80">
             <Link to="/mapa" state={{ linha: "Marrom" }} className="text-white">
-              Marrom
+            <img src={linhaMarrom} className="object-cover h-36 sm:h-48 md:h-56 lg:h-72 w-full"></img>
             </Link>
           </div>
-          <div className="bg-slate-400 h-36 sm:h-48 md:h-56 lg:h-72 w-full flex items-center justify-center hover:opacity-80">
+          <div className="flex items-center justify-center hover:opacity-80">
             <Link to="/mapa" state={{ linha: "Azul" }} className="text-white">
-              Azul
+            <img src={linhaAzul} className="object-cover h-36 sm:h-48 md:h-56 lg:h-72 w-full"></img>
             </Link>
           </div>
-          <div className="bg-slate-400 h-36 sm:h-48 md:h-56 lg:h-72 w-full flex items-center justify-center hover:opacity-80">
+          <div className="flex items-center justify-center hover:opacity-80">
             <Link to="/mapa" state={{ linha: "Branco" }} className="text-white">
-              Branco
+            <img src={linhaBranca} className="object-cover h-36 sm:h-48 md:h-56 lg:h-72 w-full"></img>
             </Link>
           </div>
-          <div className="bg-slate-400 h-36 sm:h-48 md:h-56 lg:h-72 w-full flex items-center justify-center hover:opacity-80">
+          <div className="flex items-center justify-center hover:opacity-80">
             <Link to="/mapa" state={{ linha: "Log" }} className="text-white">
-              Logística Reversa
+            <img src={linhaReverse} className="object-cover h-36 sm:h-48 md:h-56 lg:h-72 w-full"></img>
             </Link>
           </div>
         </div>

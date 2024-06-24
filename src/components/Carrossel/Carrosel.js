@@ -44,7 +44,7 @@ export default function Carrosel() {
 
       <img
         src={images[currentIndex]}
-        className="w-screen h-55screen"
+        className="w-full h-auto max-h-screen object-cover"
         alt="Imagem carrosel"
       />
     </div>
